@@ -4,3 +4,6 @@
 [submodule "Themes"]
 	path = Themes
 	url = git@github.com:VagueEntertainment/tt_plus-themes.git
+[submodule "HoneyComb-redistributable"]
+	path = HoneyComb-redistributable
+	url = git@github.com:VagueEntertainment/HoneyComb-redistributable.git
