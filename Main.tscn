@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Themes/default_light_theme/default_light.tres" type="Theme" id=1]
 [ext_resource path="res://Themes/icons/scalable/places/network-workgroup-symbolic.svg" type="Texture" id=2]
 [ext_resource path="res://Themes/Fonts/roboto-slab/RobotoSlab-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Themes/icons/scalable/actions/document-import-symbolic.svg" type="Texture" id=4]
 [ext_resource path="res://Themes/default_light_theme/Menus.tres" type="Theme" id=5]
+[ext_resource path="res://Shared/Elements/VE-TABLIST.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/VE-WINDOW.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Main.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -13,19 +16,24 @@ font_data = ExtResource( 3 )
 [node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 1821.09, 406.186 )
 theme = ExtResource( 1 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -1.0
+margin_bottom = -1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 dragger_visibility = 2
@@ -46,6 +54,7 @@ margin_bottom = 760.0
 rect_clip_content = true
 
 [node name="Main" type="VBoxContainer" parent="HSplitContainer/MenuArea/Menu"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -3.05176e-05
@@ -107,7 +116,6 @@ text = "Settings"
 align = 0
 
 [node name="Games" type="VBoxContainer" parent="HSplitContainer/MenuArea/Menu"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/separation = 20
@@ -116,7 +124,7 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="HSplitContainer/MenuArea/Menu/Games"]
-margin_right = 186.0
+margin_right = 190.0
 margin_bottom = 33.0
 custom_fonts/font = SubResource( 1 )
 text = "Games"
@@ -124,36 +132,36 @@ align = 1
 
 [node name="HSeparator" type="HSeparator" parent="HSplitContainer/MenuArea/Menu/Games"]
 margin_top = 53.0
-margin_right = 186.0
+margin_right = 190.0
 margin_bottom = 57.0
 
 [node name="Load" type="Button" parent="HSplitContainer/MenuArea/Menu/Games"]
 margin_top = 77.0
-margin_right = 186.0
-margin_bottom = 97.0
+margin_right = 190.0
+margin_bottom = 101.0
 text = "Load"
 
 [node name="New" type="Button" parent="HSplitContainer/MenuArea/Menu/Games"]
-margin_top = 117.0
-margin_right = 186.0
-margin_bottom = 137.0
+margin_top = 121.0
+margin_right = 190.0
+margin_bottom = 145.0
 text = "New"
 
 [node name="HSeparator2" type="HSeparator" parent="HSplitContainer/MenuArea/Menu/Games"]
-margin_top = 157.0
-margin_right = 186.0
-margin_bottom = 161.0
+margin_top = 165.0
+margin_right = 190.0
+margin_bottom = 169.0
 
 [node name="Download" type="Button" parent="HSplitContainer/MenuArea/Menu/Games"]
-margin_top = 181.0
-margin_right = 186.0
-margin_bottom = 201.0
+margin_top = 189.0
+margin_right = 190.0
+margin_bottom = 213.0
 text = "Shop"
 
 [node name="Settings" type="Button" parent="HSplitContainer/MenuArea/Menu/Games"]
-margin_top = 221.0
-margin_right = 186.0
-margin_bottom = 241.0
+margin_top = 233.0
+margin_right = 190.0
+margin_bottom = 257.0
 text = "Settings"
 
 [node name="Back" type="Button" parent="HSplitContainer/MenuArea/Menu"]
@@ -235,3 +243,15 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/DisplayArea/Main/GameList"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VE-TABLIST" parent="VBoxContainer" instance=ExtResource( 6 )]
+
+[node name="VE-WINDOW" parent="VBoxContainer" instance=ExtResource( 7 )]
+margin_bottom = 454.0

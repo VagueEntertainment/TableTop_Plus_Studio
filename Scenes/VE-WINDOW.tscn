@@ -1,0 +1,331 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/VE-WINDOW.gd" type="Script" id=1]
+[ext_resource path="res://Shared/Elements/VE-Menu-Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Themes/Fonts/roboto24-Bold.tres" type="DynamicFont" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.905882, 0.905882, 0.905882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.905882, 0.905882, 0.905882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.905882, 0.905882, 0.905882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.635294, 0.635294, 0.635294, 0.25098 )
+
+[node name="VE-WINDOW" type="PanelContainer"]
+margin_top = 54.0
+margin_right = 1360.0
+margin_bottom = 737.0
+rect_min_size = Vector2( 0, 400 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Games" type="Control" parent="."]
+margin_right = 1360.0
+margin_bottom = 683.0
+
+[node name="Quote" type="VBoxContainer" parent="Games"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -77.0
+margin_right = 250.0
+margin_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 500, 0 )
+rect_pivot_offset = Vector2( -0.0523376, 0.206146 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="Games/Quote"]
+margin_top = 33.0
+margin_right = 500.0
+margin_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.678431, 0.678431, 0.678431, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
+text = "I don't doubt your courage, I doubt your abilty to work as a team."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Citation" type="Label" parent="Games/Quote"]
+margin_top = 106.0
+margin_right = 500.0
+margin_bottom = 120.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_colors/font_color = Color( 0.678431, 0.678431, 0.678431, 1 )
+text = "- Unknown"
+align = 2
+
+[node name="New" type="Control" parent="Games"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 202.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MainInfo" type="PanelContainer" parent="Games/New"]
+anchor_top = 0.006
+anchor_right = 0.754
+anchor_bottom = 0.992679
+margin_left = 9.0
+margin_top = -0.098
+margin_right = -0.132019
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="SubInfo1" type="PanelContainer" parent="Games/New"]
+anchor_left = 0.759
+anchor_top = 0.006
+anchor_right = 1.0
+anchor_bottom = 0.371
+margin_left = 1.58868
+margin_top = -0.098
+margin_right = -6.17114
+margin_bottom = 0.606979
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SubInfo2" type="PanelContainer" parent="Games/New"]
+anchor_left = 0.760266
+anchor_top = 0.376
+anchor_right = 1.0
+anchor_bottom = 0.991036
+margin_top = 0.0695496
+margin_right = -6.09167
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Wizard" type="PanelContainer" parent="Games/New"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -513.0
+margin_top = -310.5
+margin_right = 482.0
+margin_bottom = 310.5
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 800, 400 )
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="Games/New/Wizard"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 991.0
+margin_bottom = 617.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="FirstPage" type="Control" parent="Games/New/Wizard/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Games/New/Wizard/Background/FirstPage"]
+anchor_right = 1.0
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 3 )
+text = "New Game Wizard"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="Games/New/Wizard/Background/FirstPage/Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -493.5
+margin_top = -4.0
+margin_right = 493.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Games/New/Wizard/Background/FirstPage"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -493.5
+margin_top = -7.0
+margin_right = 493.5
+margin_bottom = 7.0
+text = " This dialog will help you get your game started quickly and easily. "
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Games/New/Wizard/Background"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = -40.0
+margin_right = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+rect_min_size = Vector2( 0, 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cancel" type="Button" parent="Games/New/Wizard/Background/Control"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -10.0
+margin_right = 54.0
+margin_bottom = 10.0
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="Games/New/Wizard/Background/Control"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -54.0
+margin_top = -10.0
+margin_bottom = 10.0
+grow_horizontal = 0
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Control" parent="Games"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 202.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MainInfo" type="PanelContainer" parent="Games/Load"]
+anchor_top = 0.006
+anchor_right = 0.994069
+anchor_bottom = 0.992679
+margin_left = 9.0
+margin_top = -0.098
+margin_right = -0.132019
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Menu" type="Panel" parent="Games"]
+anchor_top = 0.001
+anchor_bottom = 0.999
+margin_top = -0.683
+margin_right = 200.0
+margin_bottom = -0.317078
+rect_min_size = Vector2( 200, 0 )
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Games/Menu"]
+anchor_right = 1.07
+anchor_bottom = 0.993
+margin_left = 7.0
+margin_top = 3.0
+margin_right = 14.0
+margin_bottom = -0.226013
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" parent="Games/Menu/VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 221.0
+
+[node name="New" parent="Games/Menu/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 54.0
+margin_right = 221.0
+margin_bottom = 104.0
+
+[node name="Library" type="Control" parent="."]
+visible = false
+margin_right = 1360.0
+margin_bottom = 683.0
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Library"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = 11.0
+margin_right = -15.0
+margin_bottom = -9.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="PanelContainer" parent="Library/HSplitContainer"]
+margin_right = 200.0
+margin_bottom = 663.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="Info" type="PanelContainer" parent="Library/HSplitContainer"]
+margin_left = 212.0
+margin_right = 1334.0
+margin_bottom = 663.0
+[connection signal="focus" from="Games/Menu/VBoxContainer/Load" to="." method="_on_Load_focus"]
+[connection signal="focus" from="Games/Menu/VBoxContainer/New" to="." method="_on_New_focus"]
